@@ -1,0 +1,24 @@
+<%- include("partials/head.ejs",{title:title}) %>
+<body class="container ">
+    <h1>Contacts list</h1>
+    <table class="table">
+        <thead>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Location</th>
+            <th scope="col">Address</th>
+            <th scope="col">E-Mail</th>
+        </thead>
+        <tbody>
+            <% lista_contactos.forEach(e => {%>
+                <tr>
+                    <td><%= `${e.first_name} ${e.last_name}`%></td>
+                    <td><%= e.phone %></td>
+                    <td><%= `${e.country} ${e.city}`%></td>
+                    <td><%= e.address %></td>
+                    <td><%= e.email %></td>
+                </tr>
+            <%});%>
+        </tbody>
+    </table>    
+</body>
